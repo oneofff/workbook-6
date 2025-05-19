@@ -1,3 +1,4 @@
+```mermaid
 classDiagram
 direction TB
     class Portfolio {
@@ -74,3 +75,5 @@ direction TB
     FixedAsset --|> Jewelry
     FixedAsset --|> Gold
     FixedAsset --|> House
+	```
+	
