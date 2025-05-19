@@ -58,7 +58,7 @@ direction TB
         - String accountNumber
         + CreditCard(double dept, String accountNumber)
         + charge(int amout) void
-        + pay(int amout)
+        + pay(int amout) void
 		+ getValue(): double
     }
 
