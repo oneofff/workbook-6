@@ -45,10 +45,11 @@ direction TB
         - double balance
         - double debt
         - String name
-        
+		
+        + BankAccount(double balance, double debt, String name)
         + withdraw(int amout) void
         + deposit(int amout) void
-        + BankAccount(double balance, double debt, String name)
+		+ getValue(): double
     }
 
     class CreditCard {
@@ -57,7 +58,7 @@ direction TB
         + CreditCard(double dept, String accountNumber)
         + charge(int amout) void
         + pay(int amout)
-
+		+ getValue(): double
     }
 
     class Valuable{
