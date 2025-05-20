@@ -21,5 +21,7 @@ public class Main {
         DecimalFormat formatter = new DecimalFormat("#,###.00");
         String formattedNumber = formatter.format(portfolio.getValue());
         System.out.printf("Total value of portfolio: $ %s%n", formattedNumber );
+        System.out.printf("Most valuable item: %s%n", portfolio.getMostValuable());
+        System.out.printf("Least valuable item: %s%n", portfolio.getLeastValuable());
     }
 }

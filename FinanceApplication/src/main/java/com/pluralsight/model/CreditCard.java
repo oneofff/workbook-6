@@ -26,4 +26,9 @@ public class CreditCard implements Valuable {
     public double getValue() {
         return -debt; // Negative value since it's debt
     }
-} 
+
+    @Override
+    public int compareTo(Valuable o) {
+        return 0;
+    }
+}

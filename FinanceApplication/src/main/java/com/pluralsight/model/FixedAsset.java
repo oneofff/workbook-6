@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public abstract class FixedAsset {
+public abstract class FixedAsset implements Valuable{
     protected String name;
     protected double marketValue;
 
@@ -13,6 +13,8 @@ public abstract class FixedAsset {
         this.name = name;
         this.marketValue = value;
     }
-
-    public abstract double getValue();
+    @Override
+    public int compareTo(Valuable o) {
+        return Double.compare(this.getValue(), o.getValue());
+    }
 } 

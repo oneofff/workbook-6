@@ -1,7 +1,9 @@
 package com.pluralsight.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class Gold extends FixedAsset {
     private double weight;
@@ -16,4 +18,4 @@ public class Gold extends FixedAsset {
         // Value calculation based on weight (simplified example)
         return weight * 1800; // Assuming $1800 per ounce
     }
-} 
+}
