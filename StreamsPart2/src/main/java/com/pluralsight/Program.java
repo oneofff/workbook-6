@@ -1,7 +1,6 @@
 package com.pluralsight;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Program {
     public static void main(String[] args) {
@@ -41,12 +40,16 @@ public class Program {
         System.out.println("Time taken: " + (endTime2 - startTime2) + "ms");
 
 
-        Person oldest = people.stream().max(Comparator.comparingInt(Person::getAge))
-                .orElseThrow(NoSuchElementException::new);
+        Person oldest = people.stream()
+                .reduce((person, person2) -> person.getAge() > person2.getAge() ? person : person2)
+                .orElseThrow();
         Person youngest = people.stream().min(Comparator.comparingInt(Person::getAge))
                 .orElseThrow(NoSuchElementException::new);
 
-        double avg = people.stream().collect(Collectors.averagingInt(Person::getAge));
+        double avg = people.stream()
+                .mapToInt(Person::getAge)
+                .average()
+                .orElseThrow();
         System.out.printf("%nAverage age: %.1f%n", avg);
         System.out.println("Oldest age: " + oldest);
         System.out.println("Youngest age: " + youngest);
