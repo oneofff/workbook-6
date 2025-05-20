@@ -1,7 +1,6 @@
-package com.pluralsight;
+package com.pluralsight.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FixedList<T> extends ArrayList<T> {
     private int maxSize;
